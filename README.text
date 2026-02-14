@@ -1,0 +1,13 @@
+The auditor processes a password through several layers of security checks:
+Signature-Based Check (Dictionary Attack Defense):
+  It compares the input against a COMMON_WEAK list of frequently used passwords (e.g., "123456", "admin").
+  It detects Leet-speak variations by reverse-mapping common symbol substitutions (like @ to a or 3 to e) back to their base words to catch obscured weak passwords.
+Mathematical Entropy Calculation:
+  The script calculates bits of entropy using the formula: E = \log_2(L^N), where L is the character pool size and N is the length.
+  It dynamically determines the pool size (L) by checking for the presence of lowercase, uppercase, digits, and special characters.
+  Pattern and Heuristic Analysis:Using regular expressions, it identifies high-risk patterns such as numerical sequences ("123"), alphabetical sequences ("abc"), and repeated characters.
+  It also flags "Year patterns" (e.g., "1995") which are common in easily guessable passwords.Security Reporting:Strength Labeling: Maps the calculated entropy to a 1–10 score and descriptive labels ranging from "Very Weak" to "Excellent".
+Crack Time Estimation: 
+  Provides a human-readable estimate of how long a modern GPU (assuming 10 billion guesses per second) would take to crack the password.
+Remediation: 
+  Generates a cryptographically secure 16-character alternative and provides actionable recommendations (e.g., "Add special characters").

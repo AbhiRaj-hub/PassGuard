@@ -1,10 +1,13 @@
-import math, secrets, string, re
+import math 
+import secrets 
+import string 
+import re
 
 THRESHOLDS = [
     (100, 10, "Excellent"), (80, 9, "Strong"), (60, 7, "Good"),
-    (50, 6, "Fair"), (36, 4, "Weak"), (28, 2, "Very Weak"), (0, 1, "Very Weak")
+    (50, 6, "Fair"), (36, 4, "Weak"), (28, 2, "Very Weak"), (0, 1, "Fragile")
 ]
-COMMON_WEAK = ["123456", "password", "admin", "welcome", "qwerty", "root", "12345678"]  # Truncated for brevity
+COMMON_WEAK = ["123456", "password", "admin", "welcome", "qwerty", "root", "12345678"]
 LEET = {'a': '@4', 'e': '3', 'i': '1!', 'o': '0', 's': '$5', 't': '7', 'l': '1', 'g': '9', 'b': '8'}
 
 
